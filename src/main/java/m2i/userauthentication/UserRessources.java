@@ -22,9 +22,10 @@ public class UserRessources {
  
     UserDao userDao = new UserDao();
     
+    /*
     @Context
     private HttpServletRequest request;
-
+    */
 /*    test de récupération de l'user connecté
     @GET
     @Produces(MediaType.APPLICATION_JSON)
