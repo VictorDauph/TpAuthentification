@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "e5c4460b-d7b8-4d5a-84c9-f5ec5e578394",
+		"name": "userAuthentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetAllUSers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8668/usersAuthentication/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8668",
+					"path": [
+						"usersAuthentication",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lastName\":\"Satan\",\r\n    \"firstName\":\"Abdel\",\r\n    \"role\":\"normal\",\r\n    \"email\":\"abdel.satan@mail.fr4\",\r\n    \"password\":\"666\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8668/usersAuthentication/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8668",
+					"path": [
+						"usersAuthentication",
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "666",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "abdel.satan@mail.fr",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
