@@ -1,14 +1,47 @@
 package m2i.userauthentication;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="utilisateurs")
 public class User {
     
     // Properties
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY )
+    @JsonProperty("id")
     private int id;
+    
+    @Column
+    @JsonProperty("lastName")
     private String lastName;
+    
+    @Column
+    @JsonProperty("firstName")
     private String firstName;
+    
+    @Column(
+    columnDefinition="ENUM('normal', 'admin')"
+    )
+    @JsonProperty("role")
     private String role;
+    
+    @Column
+    @JsonProperty("email")
     private String email;
+    
+    @Column(
+        columnDefinition="VARCHAR(40)",
+        nullable=false
+    )
+    @JsonProperty(value="password", access=Access.WRITE_ONLY)
     private String password;
 
     
@@ -76,5 +109,9 @@ public class User {
         this.password = password;
     }
     
+    @Override
+    public String toString() {
+        return String.format(id+", utilisateur : "+ lastName+" "+firstName+" "+", email : "+email+", role : "+ role);
+    }    
     
 }
